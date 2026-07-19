@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rosa｜作品介紹</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Noto+Sans+TC:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #333;
+      font-family: 'Noto Sans TC', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a.back-link {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      color: #333;
+      text-decoration: none;
+      font-size: 13px;
+      z-index: 10;
+      letter-spacing: 0.1em;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .hero {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      box-sizing: border-box;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-gallery.row2 {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .static-container {
+      flex: 1;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .image-gallery.row2 .carousel-container {
+      flex: 1;
+      width: 50%;
+    }
+
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: 500%;
+      animation: slideLoop 18s infinite ease-in-out;
+    }
+
+    .carousel-track img {
+      width: 20%;
+      flex-shrink: 0;
+      height: auto;
+      display: block;
+    }
+
+    @keyframes slideLoop {
+      0%, 18% {
+        transform: translateX(0);
+      }
+
+      23%, 41% {
+        transform: translateX(-20%);
+      }
+
+      46%, 64% {
+        transform: translateX(-40%);
+      }
+
+      69%, 87% {
+        transform: translateX(-60%);
+      }
+
+      92%, 100% {
+        transform: translateX(-80%);
+      }
+    }
+
+    .project-main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 40px 100px;
+      display: flex;
+      justify-content: space-between;
+      gap: 80px;
+      box-sizing: border-box;
+    }
+
+    .project-description {
+      flex: 1;
+    }
+
+    .project-description p {
+      font-size: 0.95rem;
+      line-height: 2.15;
+      letter-spacing: 0.02em;
+      margin: 0 0 42px 0;
+      text-align: justify;
+      color: #5c5c5c;
+    }
+
+    .project-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-meta {
+      width: 220px;
+      flex-shrink: 0;
+    }
+
+    .project-meta ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .project-meta li {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 11px;
+      margin-bottom: 18px;
+    }
+
+    .project-meta li .label {
+      color: #aaa;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .project-meta li .value {
+      font-weight: 500;
+    }
+
+    .sub-description {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px 110px;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+      color: #5c5c5c;
+      box-sizing: border-box;
+    }
+
+    .sub-description p {
+      margin: 0 0 42px 0;
+      text-align: justify;
+    }
+
+    .sub-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .image-gallery.row {
+      flex-direction: row;
+      gap: 15px;
+    }
+
+    .image-gallery.row .img-wrapper {
+      flex: 1;
+      width: 50%;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #eee;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      display: none;
+      transition: 0.3s;
+      z-index: 20;
+    }
+
+    #backToTop:hover {
+      background: #f9f9f9;
+    }
+
+    .footer-top-space {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 20px 120px;
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .footer-top-link {
+      color: #333;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-family: 'IBM Plex Sans', sans-serif;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-top-link:hover {
+      opacity: 0.6;
+    }
+
+    .poster-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .poster-video {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+    @media (max-width: 1024px) {
+      .image-gallery {
+        padding: 0 16px 15px;
+      }
+
+      .project-main-container {
+        padding: 90px 32px 72px;
+        gap: 48px;
+      }
+
+      .sub-description {
+        padding: 80px 32px 90px;
+      }
+
+      .footer-top-space {
+        padding: 56px 16px 96px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      a.back-link {
+        top: 24px;
+        left: 20px;
+      }
+
+      .image-gallery {
+        padding: 0 16px 15px;
+      }
+
+      .image-gallery.row2 {
+        flex-direction: column !important;
+      }
+
+      .static-container,
+      .image-gallery.row2 .carousel-container {
+        width: 100% !important;
+      }
+
+      .project-main-container {
+        flex-direction: column;
+        padding: 56px 24px 32px;
+        gap: 32px;
+      }
+
+      .sub-description {
+        padding: 56px 24px 60px;
+      }
+
+      .project-meta {
+        width: 100%;
+      }
+
+      .project-meta ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      .image-gallery.row {
+        flex-direction: column;
+      }
+
+      .image-gallery.row .img-wrapper {
+        width: 100%;
+      }
+
+      .footer-top-space {
+        padding: 48px 16px 48px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      a.back-link {
+        top: 20px;
+        left: 16px;
+        font-size: 12px;
+      }
+
+      .project-main-container {
+        padding: 48px 20px 28px;
+      }
+
+      .sub-description {
+        padding: 48px 20px 28px;
+        font-size: 0.92rem;
+      }
+
+      .project-description p {
+        font-size: 0.92rem;
+      }
+
+      .project-meta ul {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .project-meta li {
+        margin-bottom: 0;
+      }
+
+      #backToTop {
+        right: 20px;
+        bottom: 20px;
+      }
+
+      .footer-top-space {
+        padding: 40px 16px 40px;
+      }
+
+      .footer-top-link {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pageTop" aria-hidden="true"></div>
+
+  <a href="/" class="back-link">← BACK</a>
+
+  <section class="hero">
+    <img src="../works/calendar-bn.jpg" alt="calendar Top">
+  </section>
+ 
+ 
+  <section class="project-main-container">
+    <div class="project-description">
+        <p>
+         以動物與植物之間的共生關係為發想，將十二種動物的外形轉化為十二款想像中的花種。透過幾何造型的拆解與重組，讓動物形象融入花朵的枝幹、花瓣與生長姿態中，形成介於動物與植物之間的全新物種。<br>
+
+作品依照月份編排，每一種花都對應不同的動物與季節故事，並以動態形式描繪花種活動的過程。希望透過帶有趣味與想像力的視覺語言，重新觀看自然萬物之間彼此依存、相互連結的關係。
+        </p>
+      
+    </div>
+
+    <div class="project-meta">
+      <ul>
+        <li><span class="label">Project</span><span class="value">特色動物花種月曆</span></li>
+        <li><span class="label">Year</span><span class="value">2022</span></li>
+        <li><span class="label">Scope</span><span class="value">Personal Project | Illustration · Motion Design</span></li>
+        <li><span class="label">Design</span><span class="value">WeiChieh</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="image-gallery">
+  <video class="poster-video" autoplay muted loop playsinline>
+    <source src="../works/final.mp4" type="video/mp4">
+    
+  </video>
+</section>
+<section class="image-gallery">
+    <img src="../works/calendar-poster.jpg" alt="calendar-poster">
+</section>
+    <div class="sub-description">
+    <p>
+    每一組動物與花種的結合，都從牠們的外形、動作或文化象徵延伸而來。<br>
+    例如，熊的毛髮柔軟而蓬鬆，讓人聯想到棉花柔軟的觸感，因此轉化為「棉花熊花」；貓在部分文化中常與星星和夜晚產生連結，牠們在黑暗中閃亮的眼睛也如同夜空中的星光，因此形成「星星貓花」。這些看似奇想的配對，都有各自的造型依據與故事，使每一種花成為具有獨特性格的想像物種。
+    </p>
+    </div>
+  <section class="image-gallery">
+  <video class="poster-video" autoplay muted loop playsinline>
+    <source src="../works/motion poster.mp4" type="video/mp4">
+    
+  </video>
+</section>
+    
+  
+
+ 
+
+  
+ 
+   
+
+    
+
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
+  <div class="footer-top-space">
+    <a href="#pageTop" class="footer-top-link">Top</a>
+  </div>
+
+  <script>
+    const btn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", function () {
+      btn.style.display = window.pageYOffset > 300 ? "block" : "none";
+    });
+
+    btn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+</body>
+</html>

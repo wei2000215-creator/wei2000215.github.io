@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midnight Canyon｜作品介紹</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Noto+Sans+TC:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #333;
+      font-family: 'Noto Sans TC', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a.back-link {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      color: #333;
+      text-decoration: none;
+      font-size: 13px;
+      z-index: 10;
+      letter-spacing: 0.1em;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .hero {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      box-sizing: border-box;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-gallery.row2 {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .static-container {
+      flex: 1;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .image-gallery.row2 .carousel-container {
+      flex: 1;
+      width: 50%;
+    }
+
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: 500%;
+      animation: slideLoop 18s infinite ease-in-out;
+    }
+
+    .carousel-track img {
+      width: 20%;
+      flex-shrink: 0;
+      height: auto;
+      display: block;
+    }
+
+    @keyframes slideLoop {
+      0%, 18% {
+        transform: translateX(0);
+      }
+
+      23%, 41% {
+        transform: translateX(-20%);
+      }
+
+      46%, 64% {
+        transform: translateX(-40%);
+      }
+
+      69%, 87% {
+        transform: translateX(-60%);
+      }
+
+      92%, 100% {
+        transform: translateX(-80%);
+      }
+    }
+
+    .project-main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 40px 100px;
+      display: flex;
+      justify-content: space-between;
+      gap: 80px;
+      box-sizing: border-box;
+    }
+
+    /* YouTube 播放區整體外層 */
+    .music-player-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px 48px;
+      box-sizing: border-box;
+    }
+
+    /* 播放區文字容器：目前設定成沒有卡片感 */
+    .music-player-card {
+      background: transparent;
+      color: #111111;
+      border-radius: 0;
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .music-player-label {
+      display: block;
+      margin-bottom: 12px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #7b7b7b;
+    }
+
+    .music-player-card h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .music-player-intro {
+      margin: 0 0 24px 0;
+      max-width: 620px;
+      color: #444444;
+    }
+
+    /* 用 16:9 比例包住 YouTube iframe */
+    .music-embed-wrapper {
+      position: relative;
+      width: 100%;
+      margin-top: 18px;
+      padding-top: 56.25%;
+      border-radius: 0;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .music-embed-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .project-description {
+      flex: 1;
+    }
+
+    .project-description p {
+      font-size: 0.95rem;
+      line-height: 2.15;
+      letter-spacing: 0.02em;
+      margin: 0 0 42px 0;
+      text-align: justify;
+      color: #5c5c5c;
+    }
+
+    .project-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-meta {
+      width: 220px;
+      flex-shrink: 0;
+    }
+
+    .project-meta ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .project-meta li {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 11px;
+      margin-bottom: 18px;
+    }
+
+    .project-meta li .label {
+      color: #aaa;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .project-meta li .value {
+      font-weight: 500;
+    }
+
+    .sub-description {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px 110px;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+      color: #5c5c5c;
+      box-sizing: border-box;
+    }
+
+    .sub-description p {
+      margin: 0 0 42px 0;
+      text-align: justify;
+    }
+
+    .sub-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .image-gallery.row {
+      flex-direction: row;
+      gap: 15px;
+    }
+
+    .image-gallery.row .img-wrapper {
+      flex: 1;
+      width: 50%;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #eee;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      display: none;
+      transition: 0.3s;
+      z-index: 20;
+    }
+
+    #backToTop:hover {
+      background: #f9f9f9;
+    }
+
+    .footer-top-space {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 20px 120px;
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .footer-top-link {
+      color: #333;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-family: 'IBM Plex Sans', sans-serif;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-top-link:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 1024px) {
+      .image-gallery {
+        padding: 0 16px 15px;
+      }
+
+      .project-main-container {
+        padding: 90px 32px 72px;
+        gap: 48px;
+      }
+
+      .music-player-section {
+        padding: 0 32px 40px;
+      }
+
+      .sub-description {
+        padding: 80px 32px 90px;
+      }
+
+      .footer-top-space {
+        padding: 56px 16px 96px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      a.back-link {
+        top: 24px;
+        left: 20px;
+      }
+
+      .image-gallery {
+        padding: 0 16px 15px;
+      }
+
+      .image-gallery.row2 {
+        flex-direction: column !important;
+      }
+
+      .static-container,
+      .image-gallery.row2 .carousel-container {
+        width: 100% !important;
+      }
+
+      .project-main-container {
+        flex-direction: column;
+        padding: 56px 24px 32px;
+        gap: 32px;
+      }
+
+      .music-player-section {
+        padding: 0 24px 32px;
+      }
+
+      .music-player-card {
+        padding: 0;
+      }
+
+      .sub-description {
+        padding: 56px 24px 60px;
+      }
+
+      .project-meta {
+        width: 100%;
+      }
+
+      .project-meta ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      .image-gallery.row {
+        flex-direction: column;
+      }
+
+      .image-gallery.row .img-wrapper {
+        width: 100%;
+      }
+
+      .footer-top-space {
+        padding: 48px 16px 48px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      a.back-link {
+        top: 20px;
+        left: 16px;
+        font-size: 12px;
+      }
+
+      .project-main-container {
+        padding: 48px 20px 28px;
+      }
+
+      .music-player-section {
+        padding: 0 20px 28px;
+      }
+
+      .music-player-card {
+        padding: 0;
+        border-radius: 0;
+      }
+
+      .music-player-card h2 {
+        font-size: 1.45rem;
+      }
+
+      .sub-description {
+        padding: 48px 20px 28px;
+        font-size: 0.92rem;
+      }
+
+      .project-description p {
+        font-size: 0.92rem;
+      }
+
+      .project-meta ul {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .project-meta li {
+        margin-bottom: 0;
+      }
+
+      #backToTop {
+        right: 20px;
+        bottom: 20px;
+      }
+
+      .footer-top-space {
+        padding: 40px 16px 40px;
+      }
+
+      .footer-top-link {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pageTop" aria-hidden="true"></div>
+
+  <a href="/" class="back-link">← BACK</a>
+
+  <section class="hero">
+    <img src="../works/midnightcayon-top.jpg" alt="midnightcayon Top">
+  </section>
+ 
+ 
+  <section class="project-main-container">
+    <div class="project-description">
+        <p>
+         因為喜歡 The Cheers Cheers 專輯《Carinae》中的〈Midnight Canyon〉，歌曲融合 Dream Pop、Shoegaze 與 Indie Pop 的曲風，以朦朧的人聲、柔和而帶有顆粒感的聲響，營造出像在深夜裡緩慢漂浮的迷幻氛圍。<br>輕盈的旋律之中，又藏著一點模糊、失重與不真實感，成為這次創作的起點。
+
+歌曲描寫一段發生於午夜的故事。兩個人在酒意、愛意與夢境之間逐漸離開現實，感受如同漂浮於宇宙般失去方向，又同時墜入彼此之中。
+
+以歌曲名稱為起點，我將〈Midnight Canyon〉想像成一顆位於未知宇宙的星球。兩位異星旅人相遇，在寂靜夜色下共享酒與陪伴；畫面中的星體、植物與鹿，則取自歌詞中朦朧且跳躍的意象，共同構成一場浪漫、迷幻而帶有童趣的夜間漫遊。
+        </p>
+      
+    </div>
+
+    <div class="project-meta">
+      <ul>
+        <li><span class="label">Project</span><span class="value">Midnight Canyon 唱片設計</span></li>
+        <li><span class="label">Year</span><span class="value">2023</span></li>
+        <li><span class="label">Scope</span><span class="value">Personal Project | Graphic Design </span></li>
+        <li><span class="label">Design</span><span class="value">WeiChieh</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- YouTube 播放區 -->
+  <section class="music-player-section" aria-labelledby="midnight-canyon-audio-title">
+    <div class="music-player-card">
+      <span class="music-player-label">Listen</span>
+      <h2 id="midnight-canyon-audio-title">播放〈Midnight Canyon〉</h2>
+   
+      <div class="music-embed-wrapper">
+        <!-- Midnight Canyon 的 YouTube 內嵌播放器 -->
+        <iframe
+          src="https://www.youtube.com/embed/zx2u8qYYgsM"
+          title="The Cheers Cheers - Midnight Canyon"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-gallery">
+    <img src="../works/midnightcayon-bn.jpg" alt="midnightcayon-bn">
+     </section>
+
+     <section class="image-gallery">
+    <img src="../works/midnightcayon-CD.jpg" alt="midnightcayon-CD">
+     <img src="../works/midnightcayon-mockup.jpg" alt="midnightcayon-mockup">
+</section>
+    
+
+    <div class="sub-description">
+    <p>
+     作品以CD唱片及歌詞卡的形式呈現，正面承載歌曲的視覺世界，背面收錄完整歌詞，使其不只是單曲視覺，也成為一件可以被閱讀與收藏的音樂周邊。
+    </p>
+    </div>
+
+  
+
+ 
+
+  
+ 
+   
+
+    
+
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
+  <div class="footer-top-space">
+    <a href="#pageTop" class="footer-top-link">Top</a>
+  </div>
+
+  <script>
+    // 回到頂部按鈕
+    const btn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", function () {
+      btn.style.display = window.pageYOffset > 300 ? "block" : "none";
+    });
+
+    btn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+</body>
+</html>

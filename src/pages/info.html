@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/style.scss">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+  <title>Wei Chieh HSIAO｜Info</title>
+</head>
+
+<body class="info-page" id="pageTop">
+  <a href="/" class="back-link">← BACK</a>
+  <main class="info-main">
+    <section class="info-hero">
+      <picture>
+        <source media="(max-width: 768px)" srcset="/works/info-ph.jpg">
+        <img src="/works/info-pc.jpg" alt="Wei Chieh HSIAO info banner">
+      </picture>
+    </section>
+
+    <section class="info-about">
+      <h1 class="info-about-title">About me</h1>
+
+      <div class="info-about-copy">
+        <p>我是一名平面與品牌設計師，擅長將品牌調性轉化為清楚且具商業溝通力的視覺內容，包含品牌識別、電商素材、社群素材、包裝設計、印刷品與活動視覺延伸等。<br>
+
+        
+
+        過去在品牌端與設計公司累積實務經驗，熟悉從概念發想、視覺延伸到實際應用的設計流程，也協助品牌建立更完整且一致的視覺規劃。
+
+       </p>
+      </div>
+    </section>
+
+    <section class="info-details">
+      <div class="info-detail-block info-detail-intro">
+        <p>蕭薇倢 (26)</p>
+        <p>Email: <a href="mailto:wei2000215@gmail.com">wei2000215@gmail.com</a></p>
+        <p>IG: <a href="https://www.instagram.com/zooomoon/" target="_blank" rel="noreferrer">zooomoon</a></p>
+        <p>國立雲林科技大學｜視覺傳達設計系 畢業</p>
+      </div>
+
+      <div class="info-detail-block">
+        <h2>經歷 Experience</h2>
+        <ul>
+          <li><span class="info-detail-year">2025-2026</span><span class="info-detail-text">嬌寵醫生｜品牌設計<br>品牌視覺定調、品牌整合、官網視覺、商品頁、EDM 與包裝視覺設計</span></li>
+          <li><span class="info-detail-year">2024</span><span class="info-detail-text">北極設計｜平面設計師<br>品牌視覺、商業平面、包裝與印刷物設計</span></li>
+          <li><span class="info-detail-year">2023</span><span class="info-detail-text">小日常寢居｜品牌設計<br>品牌視覺、電商官網、商品頁與社群圖文設計</span></li>
+          <li><span class="info-detail-year">2020</span><span class="info-detail-text">台中厚禮牛設計公司｜設計實習<br>參與品牌設計專案，累積商業設計流程經驗</span></li>
+        </ul>
+      </div>
+
+      <div class="info-detail-block">
+        <h2>活動獎項 Awards &amp; Activities</h2>
+        <ul>
+          <li><span class="info-detail-year">2022</span><span class="info-detail-text">第十屆師生創新圓夢計畫｜金獎、四創新星獎</span></li>
+          <li><span class="info-detail-year">2022</span><span class="info-detail-text">Young Ones Student Awards｜入圍</span></li>
+          <li><span class="info-detail-year">2020</span><span class="info-detail-text">TISDC 設計創意大賽｜入圍</span></li>
+          <li><span class="info-detail-year">2019-2021</span><span class="info-detail-text">視傳系學會副公關、新生開展營美宣組、社團典禮美宣組</span></li>
+        </ul>
+      </div>
+
+      <div class="info-detail-block">
+        <h2>品牌設計 Branding</h2>
+        <p>品牌識別、Logo 設計、視覺延伸、品牌調性整理</p>
+      </div>
+
+      <div class="info-detail-block">
+        <h2>平面設計 Graphic Design</h2>
+        <p>海報、DM、活動主視覺、包裝設計、印刷排版、字體設計</p>
+      </div>
+
+      <div class="info-detail-block">
+        <h2>電商視覺 E-commerce Visual</h2>
+        <p>官網 Banner、社群貼文、電商活動視覺、商品頁視覺、Shopline 後台操作</p>
+      </div>
+
+      <div class="info-detail-block">
+        <h2>工具應用 Tools</h2>
+        <p>Adobe Illustrator / Photoshop / InDesign / Premiere Pro / After Effects / ChatGPT / Codex / Visual Studio Code</p>
+      </div>
+    </section>
+  </main>
+   <button id="backToTop" aria-label="Back to top">↑</button>
+
+  <div class="footer-top-space">
+    <a href="#pageTop" class="footer-top-link">Top</a>
+  </div>
+
+  <script>
+    const btn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", function () {
+      btn.style.display = window.pageYOffset > 300 ? "block" : "none";
+    });
+
+    btn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+</body>
+
+</html>
