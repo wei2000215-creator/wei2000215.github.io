@@ -1,17 +1,14 @@
-console.log("index.js");
 const banner = document.querySelector("section.banner");
 const img = banner.querySelector("img");
 const bannerLink = document.querySelector("#banner-link");
 const arrowIcon = document.querySelector("div.arrow-icon");
 
-console.log(arrowIcon);
-
 const banners = [
-  { src: "/banner/rosa-topbn.jpg", href: "/pages/rosa.html" },
-  { src: "/banner/black-clam.jpg", href: "/pages/blackclam.html" },
-  { src: "/banner/ac-topbn.jpg", href: "/pages/anychicken.html" },
-  { src: "/banner/mid-topbn.jpg", href: "/pages/midnightcayon.html" },
-  { src: "/banner/kawa-topbn.jpg", href: "/pages/kawa.html" },
+  { src: "./banner/rosa-topbn.jpg", href: "./pages/rosa.html" },
+  { src: "./banner/black-clam.jpg", href: "./pages/blackclam.html" },
+  { src: "./banner/ac-topbn.jpg", href: "./pages/anychicken.html" },
+  { src: "./banner/mid-topbn.jpg", href: "./pages/midnightcayon.html" },
+  { src: "./banner/kawa-topbn.jpg", href: "./pages/kawa.html" },
 ];
 
 function updateBanner(index) {
