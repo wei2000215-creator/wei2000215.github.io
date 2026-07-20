@@ -84,6 +84,10 @@ header {
   
 }
 
+header + main {
+  padding-top: 0;
+}
+
 ul {
   display: flex;
   gap: 0px;
@@ -470,6 +474,43 @@ a.back-link {
 }
 
 @media (max-width: 768px) {
+  header {
+    padding: 10px 14px 12px 8px;
+    background: rgb(255 255 255 / 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  header + main {
+    padding-top: 72px;
+  }
+
+  .logo-yabi {
+    width: 44%;
+    min-width: 0;
+    margin-left: -6px;
+  }
+
+  .nav-info {
+    font-size: 14px;
+  }
+
+  .banner {
+    background: #fff;
+
+    img {
+      display: block;
+    }
+
+    .arrow-icon {
+      bottom: 22px;
+    }
+  }
+
+  .works {
+    padding-top: 18px;
+  }
+
   a.back-link {
     top: 24px;
     left: 20px;
@@ -493,6 +534,27 @@ a.back-link {
 }
 
 @media (max-width: 480px) {
+  header {
+    padding: 12px 12px 14px 4px;
+  }
+
+  header + main {
+    padding-top: 76px;
+  }
+
+  .logo-yabi {
+    width: 48%;
+    margin-left: -10px;
+  }
+
+  .nav-info {
+    font-size: 13px;
+  }
+
+  .works {
+    padding-top: 14px;
+  }
+
   a.back-link {
     top: 20px;
     left: 16px;
